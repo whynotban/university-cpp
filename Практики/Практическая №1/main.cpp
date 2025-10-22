@@ -15,7 +15,7 @@ int main() {
     std::cin >> y;
 
     double R = 1.0 / tan((pi / 4.0) * x);
-    double S = pow(y, 1.0 / 4.0) * pow(2.0, y);
+    double S = pow(y, 1.0 / 4.0) * pow(2.0, 1.0 / y);
 
     double C = std::max(R, S);
 
