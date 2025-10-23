@@ -2,9 +2,9 @@
 
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode(500, 500), "работа #3");
+    sf::RenderWindow window(sf::VideoMode(500, 500), "СЂР°Р±РѕС‚Р° #3");
 
-    int n = 10;  // размерность матрицы
+    int n = 10;  // СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°С‚СЂРёС†С‹
     int cellSize = 500 / n;
 
     while (window.isOpen()) {
@@ -24,7 +24,7 @@ int main() {
                 cell.setOutlineColor(sf::Color::Black);
                 cell.setOutlineThickness(1.0f);
 
-                // Побочная диагональ
+                // РџРѕР±РѕС‡РЅР°СЏ РґРёР°РіРѕРЅР°Р»СЊ
                 if ((i + j > n - 1) && ((i + j) % 2 != 0)) {
                     cell.setFillColor(sf::Color::Green);
                 }
