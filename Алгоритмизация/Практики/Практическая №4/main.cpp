@@ -29,8 +29,7 @@ void quickSort(std::vector<int>& arr, int low, int high) {
 }
 
 void parallelQuickSort(std::vector<int>& arr, int low, int high, int numThreads) {
-    if (low >= high)
-        return;
+    if (low >= high) return;
 
     if (numThreads <= 1 || (high - low) < 1000) {
         quickSort(arr, low, high);
@@ -38,7 +37,6 @@ void parallelQuickSort(std::vector<int>& arr, int low, int high, int numThreads)
     }
 
     int pi = partition(arr, low, high);
-
     int leftThreads = numThreads / 2;
     int rightThreads = numThreads - leftThreads;
 
@@ -67,15 +65,16 @@ int main() {
     setlocale(LC_ALL, "Russian");
     srand(time(0));
 
-    int sizes[] = {100, 1000, 10000, 20000, 30000, 40000, 50000};
+    int sizes[] = { 100, 1000, 10000, 20000, 30000, 40000, 50000 };
 
     std::cout << "N\t\tQS\t\tQS_2t\t\tQS_4t\t\tQS_8t" << std::endl;
 
     for (int k = 0; k < 7; k++) {
         int n = sizes[k];
         std::vector<int> base(n);
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             base[i] = rand() % 10000000;
+        }
 
         double t1 = measureQS(base);
         double t2 = measureParQS(base, 2);
